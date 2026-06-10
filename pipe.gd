@@ -3,7 +3,7 @@ extends Node2D
 signal scored
 
 var speed = 200
-var gap = 250
+var gap = 180
 var has_scored = false
 
 func _ready():
@@ -11,8 +11,8 @@ func _ready():
 	$"top pipe".scale = Vector2(3.0, 3.0)
 	$"bottom pipe".scale = Vector2(3.0, 3.0)
 	$"top pipe".flip_v = true
-	$"top pipe".position.y = -(gap / 2.0 + 163)
-	$"bottom pipe".position.y = gap / 2.0 + 163
+	$"top pipe".position.y = -(gap / 2.0 + 200)
+	$"bottom pipe".position.y = gap / 2.0 + 200
 	$CollisionShape2D.shape.size = Vector2(48, 326)
 	$CollisionShape2D.position = Vector2(0, $"top pipe".position.y)
 	$CollisionShape2D2.shape.size = Vector2(48, 326)

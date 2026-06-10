@@ -48,6 +48,8 @@ stream = ExtResource("5_7mycd")
 [node name="hit" type="AudioStreamPlayer2D" parent="bee" unique_id=885761225]
 stream = ExtResource("6_272bh")
 
+[node name="DeadSprite" type="Sprite2D" parent="bee" unique_id=985265937]
+
 [node name="PipeTimer" type="Timer" parent="." unique_id=841098048]
 autostart = true
 
@@ -73,6 +75,10 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="DimOverlay" type="ColorRect" parent="UI" unique_id=1499303525]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="GameOverScreen" type="Control" parent="UI" unique_id=1443990796]
 layout_mode = 3

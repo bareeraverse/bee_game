@@ -33,7 +33,7 @@ func _ready():
 	$UI/BestLabel.add_theme_constant_override("outline_size", 4)
 	$UI/BestLabel.set_anchor(SIDE_LEFT, 1.0)
 	$UI/BestLabel.set_anchor(SIDE_RIGHT, 1.0)
-	$UI/BestLabel.set_offset(SIDE_LEFT, -120)
+	$UI/BestLabel.set_offset(SIDE_LEFT, -150)
 	$UI/BestLabel.set_offset(SIDE_RIGHT, 0)
 	$UI/BestLabel.set_offset(SIDE_TOP, 50)
 	$UI/BestLabel.set_offset(SIDE_BOTTOM, 90)
@@ -48,6 +48,13 @@ func _ready():
 	$UI/StartScreen/StartLabel.size = Vector2(500, 50)
 	$UI/StartScreen/StartLabel.position = Vector2(326, 300)
 	$UI/StartScreen.visible = true
+	
+# Dim overlay
+	$UI/DimOverlay.color = Color(0, 0, 0, 0.5)
+	$UI/DimOverlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	$UI/DimOverlay.size = Vector2(1152, 648)
+	$UI/DimOverlay.position = Vector2(0, 0)
+	$UI/DimOverlay.visible = false
 	
 	# Game over screen
 	$UI/GameOverScreen.visible = false
@@ -81,8 +88,13 @@ func spawn_pipe():
 		vp.x + 50,
 		randf_range(vp.y * 0.3, vp.y * 0.7)
 	)
+	pipe.speed = 200 + (score * 5)
 	pipe.scored.connect(_on_pipe_scored)
 	get_tree().current_scene.add_child(pipe)
+	
+	# Timer wait time kam karo speed ke saath
+	var new_wait = max(0.8, $PipeTimer.wait_time - (score * 0.02))
+	$PipeTimer.wait_time = new_wait
 
 func _on_pipe_scored():
 	if game_over:
@@ -101,6 +113,7 @@ func show_game_over():
 		save_best_score()
 
 	$UI/BestLabel.text = "BEST: " + str(best_score)
+	$UI/DimOverlay.visible = true
 
 	$PipeTimer.stop()
 	for pipe in get_tree().get_nodes_in_group("pipes"):
