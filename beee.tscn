@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cje5vyvilvlwn"]
+
+[ext_resource type="Script" uid="uid://dkj0o0vbg48yg" path="res://bee.gd" id="1_gr3ev"]
+[ext_resource type="Texture2D" uid="uid://g85h4o6wo42j" path="res://Sprite-0001.png" id="2_lbxh2"]
+[ext_resource type="Texture2D" uid="uid://bn815umlmxdsx" path="res://Sprite-0002.png" id="3_5bonp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da10w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lbxh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5bonp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="main" type="Node2D" unique_id=37932725]
+
+[node name="bee" type="CharacterBody2D" parent="." unique_id=1670705461]
+script = ExtResource("1_gr3ev")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bee" unique_id=1713225357]
+sprite_frames = SubResource("SpriteFrames_da10w")
+frame = 1
+frame_progress = 0.05897298

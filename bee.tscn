@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b2uifg1bjpli8"]
+
+[ext_resource type="Script" uid="uid://dkj0o0vbg48yg" path="res://bee.gd" id="1_q8d8k"]
+[ext_resource type="Texture2D" uid="uid://g85h4o6wo42j" path="res://Sprite-0001.png" id="2_hoj8b"]
+[ext_resource type="Texture2D" uid="uid://bn815umlmxdsx" path="res://Sprite-0002.png" id="3_b1nx6"]
+[ext_resource type="Texture2D" uid="uid://bn62gm1p21ior" path="res://bg.png" id="4_hoj8b"]
+[ext_resource type="PackedScene" uid="uid://de7qtgmsh15sl" path="res://obstackle.tscn" id="5_b1nx6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdpr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hoj8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b1nx6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bee" type="CharacterBody2D" unique_id=1190774206]
+position = Vector2(300, 200)
+script = ExtResource("1_q8d8k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218081937]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_sdpr3")
+frame_progress = 0.5608045
+
+[node name="bg" type="Sprite2D" parent="AnimatedSprite2D" unique_id=723562037]
+z_index = -10
+position = Vector2(-16.5, -5.25)
+texture = ExtResource("4_hoj8b")
+
+[node name="obstacle" parent="AnimatedSprite2D" unique_id=144273271 instance=ExtResource("5_b1nx6")]
+position = Vector2(-4, 114.75)

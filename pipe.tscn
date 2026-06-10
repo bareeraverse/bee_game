@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ccrfnfcx16gkf"]
+
+[ext_resource type="Script" uid="uid://hlc5cam660kh" path="res://pipe.gd" id="1_78010"]
+[ext_resource type="Texture2D" uid="uid://cak3ykq4xkq5s" path="res://top.png" id="2_arayy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_78010"]
+load_path = "res://.godot/imported/top.png-5cb96e5619cd7eebabf4c953e7fdcb34.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arayy"]
+size = Vector2(22, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78010"]
+size = Vector2(22, 247)
+
+[node name="pipe" type="StaticBody2D" unique_id=1964324087]
+script = ExtResource("1_78010")
+
+[node name="top pipe" type="Sprite2D" parent="." unique_id=1235473567]
+scale = Vector2(1.3770833, 2.2777777)
+texture = SubResource("CompressedTexture2D_78010")
+region_enabled = true
+region_rect = Rect2(191.9445, 0.08910942, 16.10756, 108.52026)
+
+[node name="bottom pipe" type="Sprite2D" parent="." unique_id=645874564]
+scale = Vector2(1.377, 2.261)
+texture = ExtResource("2_arayy")
+region_enabled = true
+region_rect = Rect2(191.76906, 0.21732807, 16.09642, 108.530815)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=163656902]
+scale = Vector2(0.896, 1)
+shape = SubResource("RectangleShape2D_arayy")
+debug_color = Color(0.074493565, 0.61255014, 0.60792017, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=712274932]
+shape = SubResource("RectangleShape2D_78010")
+debug_color = Color(0.524495, 0.24052724, 0.7208441, 0.41960785)

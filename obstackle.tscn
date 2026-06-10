@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://de7qtgmsh15sl"]
+
+[ext_resource type="Script" uid="uid://84vvsstmg608" path="res://obstackle.gd" id="1_oeib0"]
+[ext_resource type="Texture2D" uid="uid://cak3ykq4xkq5s" path="res://top.png" id="2_4on6t"]
+[ext_resource type="Texture2D" uid="uid://cnyjytuyx5hw6" path="res://bottom.png" id="3_gl1wj"]
+
+[node name="obstacle" type="Node2D" unique_id=144273271]
+script = ExtResource("1_oeib0")
+
+[node name="top" type="Sprite2D" parent="." unique_id=2099677231]
+position = Vector2(0, -120)
+scale = Vector2(-1, -1)
+texture = ExtResource("2_4on6t")
+
+[node name="bottom" type="Sprite2D" parent="top" unique_id=795449096]
+texture = ExtResource("3_gl1wj")
