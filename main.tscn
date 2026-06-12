@@ -80,6 +80,10 @@ offset_bottom = 23.0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="NewBestLabel" type="Label" parent="UI" unique_id=393661874]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="GameOverScreen" type="Control" parent="UI" unique_id=1443990796]
 layout_mode = 3
 anchors_preset = 0
