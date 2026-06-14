@@ -43,7 +43,12 @@ func die():
 	dying = true
 	velocity.y = -200
 	velocity.x = 0
+	position.x = min(position.x, 350)  # bee ko thoda peeche khinch lo agar zyada aage chali gayi
 	$hit.play()
 	$AnimatedSprite2D.visible = false
 	$DeadSprite.texture = load("res://dead.png")
 	$DeadSprite.visible = true
+	for pipe in get_tree().get_nodes_in_group("pipes"):
+		pipe.set_process(false)
+	get_parent().get_node("PipeTimer").stop()
+		

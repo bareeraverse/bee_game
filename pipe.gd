@@ -21,9 +21,11 @@ func _ready():
 func _process(delta):
 	position.x -= speed * delta
 	
-	if not has_scored and position.x < 300:
-		has_scored = true
-		emit_signal("scored")
+	if not has_scored:
+		var bee = get_tree().current_scene.get_node("bee")
+		if bee and global_position.x < bee.global_position.x:
+			has_scored = true
+			emit_signal("scored")
 	
 	if position.x < -300:
 		queue_free()

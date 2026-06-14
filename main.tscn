@@ -65,6 +65,10 @@ texture = ExtResource("5_lquwl")
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="BestLabel" type="Label" parent="UI" unique_id=546948229]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="StartScreen" type="Control" parent="UI" unique_id=1138992969]
 layout_mode = 3
 anchors_preset = 0
@@ -76,13 +80,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="DimOverlay" type="ColorRect" parent="UI" unique_id=1499303525]
+[node name="TitleImage" type="TextureRect" parent="UI/StartScreen" unique_id=5286219]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="NewBestLabel" type="Label" parent="UI" unique_id=393661874]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="DimOverlay" type="ColorRect" parent="UI" unique_id=1499303525]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="GameOverScreen" type="Control" parent="UI" unique_id=1443990796]
 layout_mode = 3
@@ -111,10 +120,6 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="BestLabel" type="Label" parent="UI" unique_id=546948229]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="score" type="AudioStreamPlayer2D" parent="." unique_id=658374116]
 stream = ExtResource("8_5vw27")

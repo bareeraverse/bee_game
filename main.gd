@@ -51,6 +51,11 @@ func _ready():
 	$UI/NewBestLabel.visible = false
 	
 	# Start screen
+	$UI/StartScreen/TitleImage.texture = load("res://ui/gamestart.png")
+	$UI/StartScreen/TitleImage.position = Vector2(120, 120)
+	$UI/StartScreen/TitleImage.size = Vector2(900, 200)
+	$UI/StartScreen/TitleImage.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	
 	$UI/StartScreen/StartLabel.text = "Press Space to Start"
 	$UI/StartScreen/StartLabel.add_theme_font_override("font", pixel_font)
 	$UI/StartScreen/StartLabel.add_theme_font_size_override("font_size", 20)
@@ -58,7 +63,7 @@ func _ready():
 	$UI/StartScreen/StartLabel.add_theme_constant_override("outline_size", 3)
 	$UI/StartScreen/StartLabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$UI/StartScreen/StartLabel.size = Vector2(500, 50)
-	$UI/StartScreen/StartLabel.position = Vector2(326, 300)
+	$UI/StartScreen/StartLabel.position = Vector2(326, 350)
 	$UI/StartScreen.visible = true
 	
 	# Dim overlay
