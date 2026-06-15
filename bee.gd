@@ -51,4 +51,4 @@ func die():
 	for pipe in get_tree().get_nodes_in_group("pipes"):
 		pipe.set_process(false)
 	get_parent().get_node("PipeTimer").stop()
-		
+	get_parent().show_game_over()  # <-- seedha yahan call karo
